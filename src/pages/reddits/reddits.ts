@@ -20,9 +20,23 @@ export class RedditsPage {
       this.getPosts(this.category, this.limit);
   }
 
-  getDefaults(){
-    this.category = 'sports';
-    this.limit = 10;
+   getDefaults(){
+
+    if(localStorage.getItem('category') != null){
+      
+       this.category = localStorage.getItem('category');
+    }else{
+      
+      this.category = 'sports';
+    }
+
+     if(localStorage.getItem('limit') != null){
+       
+       this.category = localStorage.getItem('limit');
+    }else{
+      
+      this.category = 10;
+    }
   }
 
   getPosts(category, limit){
